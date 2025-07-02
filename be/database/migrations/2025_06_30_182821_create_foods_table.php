@@ -16,12 +16,14 @@ return new class extends Migration
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
+            $table->string('Image_Main');
             $table->string('Image');
             $table->integer('ID_Type');
             $table->integer('BestSeller')->default(BestSellerFoods::NORMAL);
             $table->integer('Status')->default(StatusFoods::ACTIVCE);
             $table->integer('Cost');
             $table->text('Detail');
+            $table->double('Rates')->default(0);
             $table->timestamps();
         });
     }
