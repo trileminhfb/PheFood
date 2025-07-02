@@ -13,4 +13,14 @@ class Tables extends Model
         'Status',
         'Amount',
     ];
+
+    public function food()
+    {
+        return $this->belongsToMany(Foods::class);
+    }
+
+    public function invoice()
+    {
+        return $this->belongsTo(Invoices::class);
+    }
 }

@@ -19,4 +19,34 @@ class Foods extends Model
         'Detail',
         'Rates',
     ];
+
+    public function evaluate()
+    {
+        return $this->hasMany(Evaluates::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Types::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsToMany(Categories::class);
+    }
+
+    public function invoice()
+    {
+        return $this->belongsToMany(Invoices::class);
+    }
+
+    public function booking()
+    {
+        return $this->belongsToMany(Bookings::class);
+    }
+
+    public function table()
+    {
+        return $this->belongsToMany(Foods::class);
+    }
 }

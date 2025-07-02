@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('evaluates__managers', function (Blueprint $table) {
             $table->id();
             $table->integer('ID_User');
-            $table->integer('ID_Evaluate');
+            $table->foreignId('ID_Evaluate')->constrained()->onDelete('cascade');
             $table->text('Comment');
             $table->timestamps();
         });

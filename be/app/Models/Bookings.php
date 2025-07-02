@@ -14,4 +14,14 @@ class Bookings extends Model
         'Amount',
         'Status',
     ];
+
+    public function food()
+    {
+        return $this->belongsToMany(Foods::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customers::class);
+    }
 }

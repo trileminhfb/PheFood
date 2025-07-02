@@ -15,4 +15,19 @@ class Evaluates extends Model
         'Stars',
         'Comment',
     ];
+
+    public function food()
+    {
+        return $this->belongsTo(Foods::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customers::class);
+    }
+
+    public function evaluate_manager()
+    {
+        return $this->hasOne(Evaluates_Managers::class);
+    }
 }

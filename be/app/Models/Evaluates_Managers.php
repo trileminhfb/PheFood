@@ -13,4 +13,14 @@ class Evaluates_Managers extends Model
         'ID_Evaluate',
         'Comment',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function evaluate()
+    {
+        return $this->belongsTo(Evaluates::class);
+    }
 }

@@ -10,11 +10,11 @@ return new class extends Migration
     {
         Schema::create('evaluates', function (Blueprint $table) {
             $table->id();
-            $table->integer('ID_Food');
-            $table->integer('ID_Customer');
-            $table->string('Image');
+            $table->foreignId('ID_Food')->constrained()->onDelete('cascade');
+            $table->foreignId('ID_Customer')->constrained()->onDelete('cascade');
+            $table->string('Image')->nullable();
             $table->double('Stars');
-            $table->text('Comment');
+            $table->text('Comment')->nullable();
             $table->timestamps();
         });
     }

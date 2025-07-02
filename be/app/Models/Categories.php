@@ -13,4 +13,14 @@ class Categories extends Model
         'Status',
         'ID_Type',
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Types::class);
+    }
+
+    public function food()
+    {
+        return $this->belongsToMany(Foods::class);
+    }
 }

@@ -6,13 +6,12 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up(): void
     {
         Schema::create('bookings__foods', function (Blueprint $table) {
             $table->id();
-            $table->integer('ID_Food');
-            $table->integer('ID_Booking');
+            $table->foreignId('ID_Food')->constrained()->onDelete('cascade');
+            $table->foreignId('ID_Booking')->constrained()->onDelete('cascade');
             $table->integer('Amount');
             $table->timestamps();
         });

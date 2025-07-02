@@ -6,23 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('invoices__foods', function (Blueprint $table) {
             $table->id();
-            $table->integer('ID_Food');
-            $table->integer('ID_Invoice');
+            $table->foreignId('ID_Food')->constrained()->onDelete('cascade');
+            $table->foreignId('ID_Invoice')->constrained()->onDelete('cascade');
             $table->integer('Amount');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('invoices__foods');
