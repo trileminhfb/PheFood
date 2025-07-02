@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('evaluates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ID_Food')->constrained()->onDelete('cascade');
-            $table->foreignId('ID_Customer')->constrained()->onDelete('cascade');
+            $table->foreignId('ID_Food')->constrained('Foods')->onDelete('cascade');
+            $table->foreignId('ID_Customer')->constrained('Customers')->onDelete('cascade');
             $table->string('Image')->nullable();
             $table->double('Stars');
             $table->text('Comment')->nullable();

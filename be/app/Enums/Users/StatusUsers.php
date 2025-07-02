@@ -9,6 +9,6 @@ use BenSampo\Enum\Enum;
 final class StatusUsers extends Enum
 {
     const PENDING = 0;
-    const ACTIVCE = 1;
+    const ACTIVATED = 1;
     const BANNED = 2;
 }

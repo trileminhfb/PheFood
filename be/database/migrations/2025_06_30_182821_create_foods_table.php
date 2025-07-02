@@ -12,12 +12,12 @@ return new class extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
+            $table->string('Name')->unique();
             $table->string('Image_Main')->nullable();
             $table->string('Image')->nullable();
             $table->integer('ID_Type');
             $table->integer('BestSeller')->default(BestSellerFoods::NORMAL);
-            $table->integer('Status')->default(StatusFoods::ACTIVCE);
+            $table->integer('Status')->default(StatusFoods::ACTIVATED);
             $table->integer('Cost');
             $table->text('Detail')->nullable();
             $table->double('Rates')->default(0);

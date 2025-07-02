@@ -11,8 +11,8 @@ return new class extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->integer('Status')->default(StatusTypes::ACTIVCE);
+            $table->string('Name')->unique();
+            $table->integer('Status')->default(StatusTypes::ACTIVATED);
             $table->timestamps();
         });
     }

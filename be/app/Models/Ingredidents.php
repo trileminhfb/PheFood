@@ -17,6 +17,7 @@ class Ingredidents extends Model
     {
         return $this->belongsTo(Warehouses::class);
     }
+
     public function warehouse_invoice()
     {
         return $this->belongsTo(Warehouses_Invoices::class);

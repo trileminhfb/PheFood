@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->integer('ID_Ingredient');
             $table->integer('Amount');
-            $table->integer('Cast');
+            $table->integer('Cost');
             $table->timestamps();
         });
     }

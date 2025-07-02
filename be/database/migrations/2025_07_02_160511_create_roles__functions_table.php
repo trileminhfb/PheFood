@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('roles__functions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ID_Role')->constrained()->onDelete('cascade');
-            $table->foreignId('ID_Function')->constrained()->onDelete('cascade');
+            $table->foreignId('ID_Role')->constrained('Roles')->onDelete('cascade');
+            $table->foreignId('ID_Function')->constrained('Functions')->onDelete('cascade');
             $table->timestamps();
         });
     }

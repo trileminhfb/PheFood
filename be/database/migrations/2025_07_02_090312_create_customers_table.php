@@ -13,14 +13,13 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('Image');
-            $table->string('Phone');
-            $table->string('OTP');
-            $table->string('Password');
+            $table->string('Image')->nullable();
+            $table->string('Phone')->unique();
+            $table->string('OTP')->nullable();
             $table->date('Birth');
             $table->integer('Status')->default(StatusCustomers::PENDING);
-            $table->integer('Points');
-            $table->integer('is_Active')->default(ActiveCustomers::UNACTIVCE);
+            $table->integer('Points')->default(0);
+            $table->integer('is_Active')->default(ActiveCustomers::UNACTIVATED);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

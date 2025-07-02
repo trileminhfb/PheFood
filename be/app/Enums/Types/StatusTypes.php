@@ -8,6 +8,6 @@ use BenSampo\Enum\Enum;
 
 final class StatusTypes extends Enum
 {
-    const UNACTIVCE = 0;
-    const ACTIVCE = 1;
+    const UNACTIVATED = 0;
+    const ACTIVATED = 1;
 }

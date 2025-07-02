@@ -8,7 +8,8 @@ use BenSampo\Enum\Enum;
 
 final class StatusTables extends Enum
 {
-    const UNACTIVCE = 0;
-    const ACTIVCE = 1;
-    const RESERVED = 2;
+    const UNAVAILABLE = 0;
+    const AVAILABLE = 1;
+    const BOOKED = 2;
+    const MAINTENANCE = 3;
 }
