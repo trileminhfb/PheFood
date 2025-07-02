@@ -15,4 +15,9 @@ class Sales extends Model
         'Percent',
         'Status',
     ];
+
+    public function invoice()
+    {
+        return $this->hasMany(Invoices::class);
+    }
 }

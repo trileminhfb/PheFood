@@ -8,29 +8,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->string('Image_Main');
-            $table->string('Image');
+            $table->string('Image_Main')->nullable();
+            $table->string('Image')->nullable();
             $table->integer('ID_Type');
             $table->integer('BestSeller')->default(BestSellerFoods::NORMAL);
             $table->integer('Status')->default(StatusFoods::ACTIVCE);
             $table->integer('Cost');
-            $table->text('Detail');
+            $table->text('Detail')->nullable();
             $table->double('Rates')->default(0);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('foods');

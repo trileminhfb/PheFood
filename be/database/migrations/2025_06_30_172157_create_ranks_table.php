@@ -11,13 +11,12 @@ return new class extends Migration
         Schema::create('ranks', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->string('Image');
+            $table->string('Image')->nullable();
             $table->double('Percent');
             $table->integer('Points');
             $table->timestamps();
         });
     }
-
 
     public function down(): void
     {

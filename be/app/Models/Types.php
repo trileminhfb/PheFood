@@ -12,4 +12,14 @@ class Types extends Model
         'Name',
         'Status',
     ];
+
+    public function food()
+    {
+        return $this->hasMany(Foods::class);
+    }
+
+    public function category()
+    {
+        return $this->hasMany(Categories::class);
+    }
 }

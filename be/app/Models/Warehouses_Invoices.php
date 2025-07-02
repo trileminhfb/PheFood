@@ -13,4 +13,9 @@ class Warehouses_Invoices extends Model
         'Amount',
         'Cast',
     ];
+
+    public function ingredient()
+    {
+        return $this->hasMany(Ingredidents::class);
+    }
 }

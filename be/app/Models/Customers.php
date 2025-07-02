@@ -10,8 +10,6 @@ use Laravel\Sanctum\HasApiTokens;
 class Customers extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
-
-
     protected $fillable = [
         'name',
         'email',
@@ -31,4 +29,19 @@ class Customers extends Model
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function booking()
+    {
+        return $this->hasMany(Bookings::class);
+    }
+
+    public function invoice()
+    {
+        return $this->hasMany(Invoices::class);
+    }
+
+    public function evaluate()
+    {
+        return $this->hasMany(Evaluates::class);
+    }
 }

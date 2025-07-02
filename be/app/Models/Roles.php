@@ -12,4 +12,14 @@ class Roles extends Model
         'Name',
         'Status',
     ];
+
+    public function functions()
+    {
+        return $this->belongsToMany(Functions::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

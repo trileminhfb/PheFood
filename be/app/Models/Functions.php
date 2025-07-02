@@ -12,4 +12,9 @@ class Functions extends Model
         'Name',
         'Code',
     ];
+
+    public function role()
+    {
+        return $this->belongsToMany(Roles::class);
+    }
 }
