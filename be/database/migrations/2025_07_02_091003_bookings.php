@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->integer('ID_Customer');
+            $table->foreignId('ID_Customer')->constrained('Customers')->onDelete('cascade');
             $table->dateTime('Time');
             $table->integer('Amount');
             $table->integer('Status')->default(StatusBookings::PENDING);

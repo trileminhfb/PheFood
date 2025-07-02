@@ -8,9 +8,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('ingredidents', function (Blueprint $table) {
+        Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
+            $table->string('Name')->unique();
             $table->string('Unit');
             $table->timestamps();
         });
@@ -18,6 +18,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('ingredidents');
+        Schema::dropIfExists('ingredients');
     }
 };

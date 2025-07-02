@@ -11,5 +11,5 @@ final class StatusBookings extends Enum
     const PENDING = 0;
     const SUCCESS = 1;
     const REJECT = 2;
-    const CANCEL = 3;
+    const CANCELLED = 3;
 }

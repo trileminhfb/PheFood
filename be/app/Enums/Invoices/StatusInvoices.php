@@ -10,5 +10,5 @@ final class StatusInvoices extends Enum
 {
     const PENDING = 0;
     const SUCCESS = 1;
-    const CANCEL = 2;
+    const CANCELLED = 2;
 }

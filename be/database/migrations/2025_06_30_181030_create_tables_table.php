@@ -11,9 +11,9 @@ return new class extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
-            $table->interger('Number');
-            $table->interger('Status')->default(StatusTables::ACTIVCE);
-            $table->interger('Amount');
+            $table->integer('Number')->unique();
+            $table->integer('Status')->default(StatusTables::AVAILABLE);
+            $table->integer('Amount');
             $table->timestamps();
         });
     }

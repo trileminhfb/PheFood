@@ -14,11 +14,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('Image')->nullable();
-            $table->string('Phone');
-            $table->string('Password');
+            $table->string('Phone')->unique();
             $table->date('Birth');
             $table->integer('Status')->default(StatusUsers::PENDING);
-            $table->integer('is_Active')->default(ActiveUsers::UNACTIVCE);
+            $table->integer('is_Active')->default(ActiveUsers::UNACTIVATED);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

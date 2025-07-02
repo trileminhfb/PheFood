@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('evaluates__managers', function (Blueprint $table) {
             $table->id();
-            $table->integer('ID_User');
-            $table->foreignId('ID_Evaluate')->constrained()->onDelete('cascade');
+            $table->foreignId('ID_User')->constrained('Users')->onDelete('cascade');
+            $table->foreignId('ID_Evaluate')->constrained('Evaluates')->onDelete('cascade');
             $table->text('Comment');
             $table->timestamps();
         });

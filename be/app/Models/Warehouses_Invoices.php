@@ -11,7 +11,7 @@ class Warehouses_Invoices extends Model
     protected $fillable = [
         'ID_Ingredient',
         'Amount',
-        'Cast',
+        'Cost',
     ];
 
     public function ingredient()

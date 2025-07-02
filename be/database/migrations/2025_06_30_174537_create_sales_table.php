@@ -11,11 +11,11 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
+            $table->string('Name')->unique();
             $table->dateTime('Start');
             $table->dateTime('End');
             $table->double('Percent');
-            $table->integer('Status')->default(StatusSales::UNACTIVCE);
+            $table->integer('Status')->default(StatusSales::UNACTIVATED);
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\Categories\StatusCategories;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -10,8 +11,8 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
-            $table->integer('Status');
+            $table->string('Name')->unique();
+            $table->integer('Status')->default(StatusCategories::ACTIVATED);
             $table->integer('ID_Type');
             $table->timestamps();
         });

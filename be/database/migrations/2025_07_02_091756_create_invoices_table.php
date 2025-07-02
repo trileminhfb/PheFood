@@ -12,8 +12,8 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->integer('ID_Table');
-            $table->integer('ID_User');
-            $table->integer('ID_Customer');
+            $table->foreignId('ID_User')->constrained('Users')->onDelete('cascade');
+            $table->foreignId('ID_Customer')->constrained('Customers')->onDelete('cascade');
             $table->integer('ID_Sale');
             $table->integer('Total');
             $table->integer('Status')->default(StatusInvoices::PENDING);
