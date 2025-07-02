@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Foods extends Model
+class Invoices extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Name',
-        'Image_Main',
-        'Image',
-        'ID_Type',
-        'BestSeller',
+        'ID_Table',
+        'ID_User',
+        'ID_Customer',
+        'ID_Sale',
+        'Total',
         'Status',
-        'Cost',
-        'Detail',
-        'Rates',
     ];
 }
