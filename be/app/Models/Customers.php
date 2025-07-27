@@ -10,14 +10,21 @@ use Laravel\Sanctum\HasApiTokens;
 class Customers extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+
     protected $fillable = [
         'name',
         'email',
         'Image',
         'Phone',
         'Birth',
+        'OTP',
+        'otp_expires_at',
+        'is_Active',
         'Status',
+        'Points',
         'password',
+        'remember_token',
+        'email_verified_at',
     ];
 
     protected $hidden = [
@@ -27,7 +34,11 @@ class Customers extends Model
 
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'otp_expires_at' => 'datetime',
         'password' => 'hashed',
+        'is_Active' => 'integer',
+        'Status' => 'integer',
+        'Points' => 'integer',
     ];
 
     public function booking()

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('Image')->nullable();
             $table->string('Phone')->unique();
             $table->string('OTP')->nullable();
+            $table->timestamp('otp_expires_at')->nullable();
             $table->date('Birth');
             $table->integer('Status')->default(StatusCustomers::PENDING);
             $table->integer('Points')->default(0);
