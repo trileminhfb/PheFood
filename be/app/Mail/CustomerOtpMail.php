@@ -17,13 +17,14 @@ class CustomerOtpMail extends Mailable
     public function __construct(
         private string $name,
         private string $OTP,
-        private Carbon $expiresAt
+        private Carbon $expiresAt,
+        private string $title,
     ) {}
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Xác Nhận OTP Đăng Ký Tài Khoản',
+            subject: $this->title,
         );
     }
 
@@ -35,6 +36,7 @@ class CustomerOtpMail extends Mailable
                 'name' => $this->name,
                 'OTP' => $this->OTP,
                 'expiresAt' => $this->expiresAt->toDateTimeString(),
+                'title' => $this->title,
             ],
         );
     }

@@ -1,12 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Mail;
-use App\Mail\CustomerOtpMail;
+use App\Http\Controllers\ChatbotController;
 use Illuminate\Support\Facades\Route;
 
 
-// Route::get('/send-mail', function () {
-//     $name = "PheFood Restaurant";
-
-//     Mail::to(new CustomerOtpMail($email))->send(new CustomerOtpMail($name));
-// });
+Route::get('/chatbot', [ChatbotController::class, 'index']);
+Route::post('/chatbot/send', [ChatbotController::class, 'send']);

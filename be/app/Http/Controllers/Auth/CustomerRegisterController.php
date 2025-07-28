@@ -43,7 +43,9 @@ class CustomerRegisterController extends Controller
                 'otp_expires_at' => $otpExpiresAt,
             ]);
 
-            Mail::to($customer->email)->send(new CustomerOtpMail($customer->name, $otp, $otpExpiresAt));
+            Mail::to($customer->email)->send(
+                new CustomerOtpMail($customer->name, $otp, $otpExpiresAt, 'Xác nhận đăng ký tài khoản')
+            );
 
             return response()->json([
                 'message' => 'Đăng ký thành công! Vui lòng kiểm tra email để xác nhận OTP.',
@@ -84,6 +86,7 @@ class CustomerRegisterController extends Controller
         try {
             $customer->update([
                 'is_Active' => ActiveCustomers::ACTIVATED,
+                'Status' => StatusCustomers::ACTIVATED,
                 'OTP' => null,
                 'otp_expires_at' => null,
                 'email_verified_at' => now(),
@@ -128,7 +131,9 @@ class CustomerRegisterController extends Controller
                 'otp_expires_at' => $otpExpiresAt,
             ]);
 
-            Mail::to($customer->email)->send(new CustomerOtpMail($customer->name, $otp, $otpExpiresAt));
+            Mail::to($customer->email)->send(
+                new CustomerOtpMail($customer->name, $otp, $otpExpiresAt, 'Gửi lại mã OTP đăng ký')
+            );
 
             return response()->json([
                 'message' => 'OTP mới đã được gửi đến email của bạn.',
