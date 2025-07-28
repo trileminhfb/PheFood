@@ -20,11 +20,15 @@ class LoginController extends Controller
         $user = User::where('email', $credentials['email'])->first();
 
         if (!$user || !Hash::check($credentials['password'], $user->password)) {
-            return response()->json(['message' => 'Thông tin đăng nhập không chính xác.'], 401);
+            return response()->json([
+                'message' => 'Thông tin đăng nhập không chính xác.'
+            ], 401);
         }
 
         if ($user->is_Active === ActiveUsers::UNACTIVATED) {
-            return response()->json(['message' => 'Tài khoản chưa được kích hoạt.'], 403);
+            return response()->json([
+                'message' => 'Tài khoản chưa được kích hoạt.'
+            ], 403);
         }
 
         $token = $user->createToken('user_token')->plainTextToken;
@@ -40,6 +44,8 @@ class LoginController extends Controller
     {
         $request->user()->currentAccessToken()->delete();
 
-        return response()->json(['message' => 'Đăng xuất thành công']);
+        return response()->json([
+            'message' => 'Đăng xuất thành công'
+        ]);
     }
 }

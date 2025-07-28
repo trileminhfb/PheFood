@@ -1,9 +1,9 @@
 <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
     <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-        <img src="https://i.ibb.co/99Z1mjrd/phefood.png" alt="PheFood Logo" style="max-width: 150px; border-radius: 9999px; display: block; margin-bottom: 20px;">
+        <img src="https://i.ibb.co/3mb6X2Fr/phefood.png" alt="PheFood Logo" style="max-width: 150px; border-radius: 9999px; display: block; margin-bottom: 20px;">
+        <h1>{{$title}}</h1>
         <h2>Chào {{ $name }},</h2>
-        <p>Cảm ơn bạn đã đăng ký tài khoản.</p>
-        <p>Mã OTP xác nhận đăng ký của bạn là:</p>
+        <p>Mã OTP xác nhận của bạn là:</p>
         <h1 style="color: #2c5282; font-size: 32px; letter-spacing: 2px;">{{ $OTP }}</h1>
         <p>Mã này có hiệu lực đến: {{ $expiresAt }}</p>
         <p>Vui lòng sử dụng mã này để xác minh tài khoản của bạn.</p>

@@ -3,9 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
-use App\Enums\Customers\ActiveCustomers;
-use App\Enums\Customers\StatusCustomers;
 
 class CustomersRequest extends FormRequest
 {
