@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
-class LoginController extends Controller
+class UserLoginController extends Controller
 {
     public function login(Request $request)
     {
