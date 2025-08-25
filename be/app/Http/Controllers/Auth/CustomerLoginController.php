@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Enums\Customers\ActiveCustomers;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CustomerResource;
 use App\Models\Customers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -25,17 +26,11 @@ class CustomerLoginController extends Controller
             ], 401);
         }
 
-        if ($customer->is_Active === ActiveCustomers::UNACTIVATED) {
-            return response()->json([
-                'message' => 'Tài khoản chưa được kích hoạt.'
-            ], 403);
-        }
-
         $token = $customer->createToken('customer_token')->plainTextToken;
 
         return response()->json([
             'message' => 'Đăng nhập thành công',
-            'user' => $customer,
+            'user' => new CustomerResource($customer),
             'token' => $token
         ]);
     }

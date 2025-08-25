@@ -1,16 +1,14 @@
-import client from "../layout/client/index.vue";
-import Home_Client from "../pages/client/Home.vue";
-
-export default [
+const client = [
   {
     path: "/",
-    component: client,
+    component: () => import("../layout/client/index.vue"),
     children: [
       {
         path: "",
-        name: "client",
-        component: Home_Client,
+        name: "home",
+        component: () => import("../pages/client/Home.vue"),
       },
     ],
   },
 ];
+export default client;

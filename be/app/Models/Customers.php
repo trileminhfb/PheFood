@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 class Customers extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+    const OTP_EXPIRE_MINUTES = 15;
 
     protected $fillable = [
         'name',
