@@ -39,7 +39,6 @@ class UsersRequest extends FormRequest
             'email.unique' => 'Email đã tồn tại.',
             'password.required' => 'Mật khẩu là bắt buộc.',
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự.',
-            'password.confirmed' => 'Xác nhận mật khẩu không khớp.',
             'Status.in' => 'Trạng thái người dùng không hợp lệ.',
             'is_Active.in' => 'Trạng thái kích hoạt không hợp lệ.',
         ];

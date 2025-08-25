@@ -19,7 +19,8 @@ class CustomersRequest extends FormRequest
             'Phone' => ['required', 'string', 'max:15', 'unique:customers,Phone'],
             'Birth' => ['required', 'date', 'before:today'],
             'email' => ['required', 'email', 'max:255', 'unique:customers,email'],
-            'password' => ['required', 'string', 'min:8'],
+            'password' => 'required|string|min:6',
+            'otp' => ['nullable', 'string', 'size:6'],
         ];
     }
 
@@ -42,7 +43,8 @@ class CustomersRequest extends FormRequest
             'email.unique' => 'Email đã được sử dụng.',
             'email.max' => 'Email không được vượt quá 255 ký tự.',
             'password.required' => 'Mật khẩu là bắt buộc.',
-            'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự.',
+            'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự.',
+            'otp.size' => 'OTP phải gồm đúng 6 ký tự.',
         ];
     }
 }

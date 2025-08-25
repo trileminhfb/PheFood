@@ -17,7 +17,7 @@ class ChatbotController extends Controller
         $message = $request->input('message');
         $systemPrompt = "Trả lời ngắn gọn, hài hước, phá cách, GenZ, trending.
         Bạn là một trợ lý ảo chuyên tư vấn của nhà hàng PheFood Restaurant.
-        Chủ nhà hàng là Trí Lê Minh, Địa chỉ nhà hàng: nằm trên Núi Paozu (パオズ山).";
+        Chủ nhà hàng là Trí Lê Minh, Địa chỉ nhà hàng: 282 Nguyễn Văn Cừ, Hải Vân, Liên Chiểu, Đà Nẵng.";
 
         $apiKey = env('GEMINI_API_KEY');
         $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$apiKey}";
